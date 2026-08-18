@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RailBook — Ticket Confirmed</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <div class="brand__mark">RB</div>
+    <div class="brand__text">RailBook<small>Indian Railways · Ticket Booking</small></div>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html">Search</a>
+    <a href="bookings.html">My Bookings</a>
+  </nav>
+</header>
+
+<div class="progress-rail" id="progress-rail"></div>
+
+<main>
+  <div class="ticket-wrap">
+    <div class="ticket-confirmed-banner">
+      <div class="check">✓</div>
+      <h1 style="font-family:var(--font-display); text-transform:uppercase; margin:0;">Booking Confirmed</h1>
+      <p style="color:var(--slate-light); margin:6px 0 0;">Your e-ticket is below. A copy has been saved to My Bookings.</p>
+    </div>
+
+    <div class="ticket" id="ticket"></div>
+
+    <div class="ticket-actions">
+      <button class="btn btn-secondary" id="print-btn">Print / Save as PDF</button>
+      <a class="btn btn-primary" href="bookings.html">Go to My Bookings</a>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  RailBook Prototype — built with HTML, CSS &amp; vanilla JavaScript. Not affiliated with IRCTC. For portfolio/demo use only.
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/confirmation.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RailBook — Select Seats</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <div class="brand__mark">RB</div>
+    <div class="brand__text">RailBook<small>Indian Railways · Ticket Booking</small></div>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html">Search</a>
+    <a href="bookings.html">My Bookings</a>
+  </nav>
+</header>
+
+<div class="progress-rail" id="progress-rail"></div>
+
+<main>
+  <div class="seats-layout">
+    <section class="panel">
+      <h2 id="train-heading">Loading train…</h2>
+      <p class="sub" id="train-sub"></p>
+
+      <div class="class-tabs" id="class-tabs"></div>
+
+      <div class="coach">
+        <div class="seat-grid" id="seat-grid"></div>
+      </div>
+
+      <div class="seat-legend">
+        <span><i class="legend-swatch available"></i> Available</span>
+        <span><i class="legend-swatch selected"></i> Selected</span>
+        <span><i class="legend-swatch booked"></i> Already booked</span>
+      </div>
+    </section>
+
+    <aside class="panel summary-panel">
+      <h2>Fare Summary</h2>
+      <p class="sub">Select seats matching your passenger count.</p>
+
+      <div class="field">
+        <label for="passenger-count">Number of passengers</label>
+        <select id="passenger-count">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </div>
+
+      <div>
+        <span class="sub" style="margin:0;">Selected seats</span>
+        <div class="selected-seats-list" id="selected-seats-list">
+          <span class="sub" style="margin:8px 0 0;">None yet</span>
+        </div>
+      </div>
+
+      <div class="summary-row">
+        <span>Base fare × <span id="seat-count">0</span></span>
+        <span id="base-fare-total">₹0</span>
+      </div>
+      <div class="summary-row">
+        <span>Reservation charge</span>
+        <span id="res-charge">₹60</span>
+      </div>
+      <div class="summary-row">
+        <span>GST (5%)</span>
+        <span id="gst-amount">₹0</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span>
+        <span id="grand-total">₹0</span>
+      </div>
+
+      <button class="btn btn-primary" id="continue-btn" style="width:100%; margin-top:18px;" disabled>
+        Continue to Passenger Details
+      </button>
+    </aside>
+  </div>
+</main>
+
+<footer class="site-footer">
+  RailBook Prototype — built with HTML, CSS &amp; vanilla JavaScript. Not affiliated with IRCTC. For portfolio/demo use only.
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/seats.js"></script>
+</body>
+</html>

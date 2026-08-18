@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RailBook — Search Trains</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <div class="brand__mark">RB</div>
+    <div class="brand__text">RailBook<small>Indian Railways · Ticket Booking</small></div>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html" class="active">Search</a>
+    <a href="bookings.html">My Bookings</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero__rail-lines"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow">Platform 01 · Departures</p>
+      <h1 class="hero__title">Book your seat<br>before the whistle blows</h1>
+      <p class="hero__subtitle">Search live availability across sleeper, AC and chair car classes, pick your exact seat on the coach map, and get an instant e-ticket.</p>
+
+      <form id="search-form" class="search-card">
+        <div class="field">
+          <label for="from">From</label>
+          <select id="from" required></select>
+        </div>
+        <div class="field">
+          <label for="to">To</label>
+          <select id="to" required></select>
+        </div>
+        <div class="field">
+          <label for="date">Journey date</label>
+          <input type="date" id="date" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Search Trains</button>
+      </form>
+    </div>
+  </section>
+
+  <section class="results" id="results" hidden>
+    <p class="results__meta" id="results-meta"></p>
+    <div id="results-list"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  RailBook Prototype — built with HTML, CSS &amp; vanilla JavaScript. Not affiliated with IRCTC. For portfolio/demo use only.
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>

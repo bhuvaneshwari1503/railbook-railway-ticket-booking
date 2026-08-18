@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RailBook — Payment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <div class="brand__mark">RB</div>
+    <div class="brand__text">RailBook<small>Indian Railways · Ticket Booking</small></div>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html">Search</a>
+    <a href="bookings.html">My Bookings</a>
+  </nav>
+</header>
+
+<div class="progress-rail" id="progress-rail"></div>
+
+<main>
+  <div class="form-page">
+    <div class="panel">
+      <h2>Payment</h2>
+      <p class="sub" id="payment-sub"></p>
+
+      <div class="pay-methods" id="pay-methods">
+        <button type="button" class="pay-method active" data-method="upi">📱<br>UPI</button>
+        <button type="button" class="pay-method" data-method="card">💳<br>Credit / Debit Card</button>
+        <button type="button" class="pay-method" data-method="netbanking">🏦<br>Net Banking</button>
+      </div>
+
+      <form id="payment-form">
+        <div id="method-fields"></div>
+
+        <div class="summary-row"><span>Base fare</span><span id="s-base"></span></div>
+        <div class="summary-row"><span>Reservation charge</span><span id="s-res"></span></div>
+        <div class="summary-row"><span>GST (5%)</span><span id="s-gst"></span></div>
+        <div class="summary-row total"><span>Amount payable</span><span id="s-total"></span></div>
+
+        <div class="form-actions">
+          <button type="button" class="btn btn-secondary" id="back-btn">← Back</button>
+          <button type="submit" class="btn btn-primary" id="pay-btn">Pay Now →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  RailBook Prototype — built with HTML, CSS &amp; vanilla JavaScript. Not affiliated with IRCTC. For portfolio/demo use only.
+</footer>
+
+<div class="processing-overlay" id="processing-overlay">
+  <div class="spinner"></div>
+  <div>PROCESSING PAYMENT…</div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/data.js"></script>
+<script src="js/storage.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/payment.js"></script>
+</body>
+</html>
